@@ -22,7 +22,7 @@ public class UserController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ModelAndView login(User model,HttpSession session) {
 		User user = userService.findUserByName(model.getUsername());
-		
+		//判断
 		if(user == null || !user.getPassword().equals(model.getPassword())) {
 			return new ModelAndView("redirect:/login.jsp");
 		}else {
